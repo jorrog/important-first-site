@@ -83,6 +83,28 @@ body {
     color: var(--primary);
 }
 
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-dark);
+    border-radius: 2px;
+}
+
+.menu-toggle-bar + .menu-toggle-bar {
+    margin-top: 5px;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -312,11 +334,17 @@ body {
 }
 
 .store-button {
-    display: block;
+    display: flex;
     background: black;
     padding: 12px 30px;
     border-radius: 8px;
     transition: transform 0.3s;
+    text-decoration: none;
+    color: white;
+    min-width: 220px;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .store-button:hover {
@@ -326,6 +354,35 @@ body {
 .store-button img {
     height: 50px;
     width: auto;
+}
+
+.store-button-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+}
+
+.store-button-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.store-button-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    align-items: flex-start;
+}
+
+.store-button-small {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.store-button-big {
+    font-size: 1.35rem;
+    font-weight: 700;
 }
 
 /* Coming Soon Badge */
@@ -468,6 +525,35 @@ body {
     
     .nav-links {
         display: none;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar .container {
+        position: relative;
+    }
+
+    .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--bg-white);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        padding: 10px 0;
+    }
+
+    .nav-links.open a {
+        padding: 12px 20px;
     }
     
     .cta-buttons {
